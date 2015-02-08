@@ -2,6 +2,7 @@ package org.ccguyka.own_unit_test_assertions;
 
 import static org.ccguyka.own_unit_test_assertions.Gender.FEMALE;
 import static org.ccguyka.own_unit_test_assertions.Gender.MALE;
+import static org.ccguyka.own_unit_test_assertions.User.UserBuilder.aUser;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
@@ -97,10 +98,16 @@ public class UserAssertionTest {
 	}
 
 	private User goodUser() {
-		return new User(NAME, MALE);
+		return aUser()
+					.withName(NAME)
+					.withGender(MALE)
+					.build();
 	}
 
 	private User failingUser() {
-		return new User(FAILING_NAME, FEMALE);
+		return aUser()
+				.withName(FAILING_NAME)
+				.withGender(FEMALE)
+				.build();
 	}
 }
