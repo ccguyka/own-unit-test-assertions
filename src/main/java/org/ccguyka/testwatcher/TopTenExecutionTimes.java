@@ -83,6 +83,19 @@ public class TopTenExecutionTimes extends RunListener {
         return entries.subList(0, Math.min(entries.size(), 10));
     }
 
+//    private List<Map.Entry<String, Execution>> getTopTenJava6() {
+//        List<Map.Entry<String, Execution>> entries = new ArrayList<Map.Entry<String, Execution>>(executionTimes.entrySet());
+//        entries.sort(new Comparator<Map.Entry<String, Execution>>() {
+//
+//            @Override
+//            public int compare(Entry<String, Execution> o1, Entry<String, Execution> o2) {
+//                return o2.getValue().getDuration().compareTo(o1.getValue().getDuration());
+//            }
+//        });
+//
+//        return entries.subList(0, Math.min(entries.size(), 10));
+//    }
+
     private String getKeyFor(Description description) {
         return description.getTestClass().getName() + "." + description.getMethodName();
     }
